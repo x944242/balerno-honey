@@ -60,8 +60,10 @@
         </div>
     </main>
 
-    <!-- JavaScript for Total Calculation and PayPal -->
+    <!-- PayPal SDK -->
     <script src="https://www.paypal.com/sdk/js?client-id=BAAnoglQTYcpdXUPkA1OJMy6KQRpMAXsXMJ8qBLLpJHealisXOvBuUMBoIZTDsAtJ6I_Pxs4o9zlJx_YuI&components=buttons&currency=GBP"></script>
+    
+    <!-- JavaScript for Total Calculation and PayPal -->
     <script>
         document.addEventListener("DOMContentLoaded", function () {
             // Calculate and update the total amount based on quantities
@@ -70,41 +72,41 @@
                 let totalAmount = 0;
 
                 quantities.forEach(input => {
-                    const quantity = parseInt(input.value, 10) || 0;
-                    const price = parseFloat(input.getAttribute("data-price"));
-                    totalAmount += quantity * price;
+                    const quantity = parseInt(input.value, 10) || 0; // Get the quantity
+                    const price = parseFloat(input.getAttribute("data-price")); // Get the price
+                    totalAmount += quantity * price; // Calculate the total
                 });
 
-                document.getElementById("total-display").innerText = `Total: £${totalAmount.toFixed(2)}`;
-                return totalAmount;
+                document.getElementById("total-display").innerText = `Total: £${totalAmount.toFixed(2)}`; // Update the displayed total
+                return totalAmount; // Return the total for PayPal
             }
 
             // Listen for quantity changes and update total
             document.querySelectorAll("input[type='number']").forEach(input => {
-                input.addEventListener("input", calculateTotal);
+                input.addEventListener("input", calculateTotal); // Update total on input change
             });
 
             // Add functionality to the total button
-            document.getElementById("total-button").addEventListener("click", calculateTotal);
+            document.getElementById("total-button").addEventListener("click", calculateTotal); // Calculate total on button click
 
             // Render PayPal button with dynamic total
             paypal.Buttons({
                 createOrder: function(data, actions) {
-                    const totalAmount = calculateTotal();
+                    const totalAmount = calculateTotal(); // Get the total amount
                     return actions.order.create({
                         purchase_units: [{
                             amount: {
-                                value: totalAmount.toFixed(2)
+                                value: totalAmount.toFixed(2) // Set total amount for PayPal
                             }
                         }]
                     });
                 },
                 onApprove: function(data, actions) {
                     return actions.order.capture().then(function(details) {
-                        alert('Transaction completed by ' + details.payer.name.given_name);
+                        alert('Transaction completed by ' + details.payer.name.given_name); // Success message
                     });
                 }
-            }).render('#paypal-container');
+            }).render('#paypal-container'); // Render PayPal button
         });
     </script>
 
