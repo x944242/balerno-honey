@@ -32,5 +32,42 @@
   }).render("#paypal-container-Z76SFT9XKAZ8L")
 </script>
 
+
+        <main>
+        <section class="gallery">
+            <!-- Product 1 -->
+            <div class="gallery-item">
+                <img src="honey1.jpg" alt="Honey Jar 1">
+                <h2>Scottish Heather Honey</h2>
+                <p>£10.00 per jar</p>
+                <label for="qty1">Quantity:</label>
+                <input type="number" id="qty1" min="0" value="0" data-price="10">
+            </div>
+
+            <!-- Product 2 -->
+            <div class="gallery-item">
+                <img src="honey2.jpg" alt="Honey Jar 2">
+                <h2>Wildflower Honey</h2>
+                <p>£8.00 per jar</p>
+                <label for="qty2">Quantity:</label>
+                <input type="number" id="qty2" min="0" value="0" data-price="8">
+            </div>
+
+            <!-- Product 3 -->
+            <div class="gallery-item">
+                <img src="honey3.jpg" alt="Honey Jar 3">
+                <h2>Ratho Special Reserve</h2>
+                <p>£12.00 per jar</p>
+                <label for="qty3">Quantity:</label>
+                <input type="number" id="qty3" min="0" value="0" data-price="12">
+            </div>
+        </section>
+
+        <div class="checkout">
+            <p id="total-display">Total: £0.00</p>
+            <button id="paypal-button">Pay with PayPal</button>
+        </div>
+    </main>
+
 </body>
 </html>
