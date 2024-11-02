@@ -33,20 +33,11 @@
 
             <!-- Product 2 -->
             <div class="gallery-item">
-                <img src="honey2.jpg" alt="Wildflower Honey">
-                <h2>Wildflower Honey</h2>
-                <p>£8.00 per jar</p>
-                <label for="qty2">Quantity:</label>
-                <input type="number" id="qty2" min="0" value="0" data-price="8">
-            </div>
-
-            <!-- Product 3 -->
-            <div class="gallery-item">
                 <img src="honey3.jpg" alt="Ratho Special Reserve">
                 <h2>Ratho Special Reserve</h2>
                 <p>£12.00 per jar</p>
-                <label for="qty3">Quantity:</label>
-                <input type="number" id="qty3" min="0" value="0" data-price="12">
+                <label for="qty2">Quantity:</label>
+                <input type="number" id="qty2" min="0" value="0" data-price="12">
             </div>
         </section>
 
@@ -56,9 +47,8 @@
             <button id="paypal-button">Pay with PayPal</button>
         </div>
 
-        <!-- PayPal Buttons (Optional) -->
-        <div id="paypal-container-93UXNLBGQU2F6"></div>
-        <div id="paypal-container-Z76SFT9XKAZ8L"></div>
+        <!-- PayPal Button Container -->
+        <div id="paypal-container"></div>
     </main>
 
     <!-- Footer Section -->
@@ -66,16 +56,49 @@
         <p>Contact us for orders and inquiries: <a href="mailto:honey@localhives.co.uk">honey@localhives.co.uk</a></p>
     </footer>
 
-    <!-- PayPal Scripts -->
-    <script src="https://www.paypal.com/sdk/js?client-id=BAAnoglQTYcpdXUPkA1OJMy6KQRpMAXsXMJ8qBLLpJHealisXOvBuUMBoIZTDsAtJ6I_Pxs4o9zlJx_YuI&components=hosted-buttons&disable-funding=venmo&currency=GBP"></script>
-    <script>
-        paypal.HostedButtons({
-            hostedButtonId: "93UXNLBGQU2F6",
-        }).render("#paypal-container-93UXNLBGQU2F6");
+    <!-- PayPal SDK -->
+    <script src="https://www.paypal.com/sdk/js?client-id=BAAnoglQTYcpdXUPkA1OJMy6KQRpMAXsXMJ8qBLLpJHealisXOvBuUMBoIZTDsAtJ6I_Pxs4o9zlJx_YuI&components=buttons&currency=GBP"></script>
 
-        paypal.HostedButtons({
-            hostedButtonId: "Z76SFT9XKAZ8L",
-        }).render("#paypal-container-Z76SFT9XKAZ8L");
+    <!-- JavaScript for Total Calculation and PayPal -->
+    <script>
+        // Calculate and update the total amount based on quantities
+        function calculateTotal() {
+            const quantities = document.querySelectorAll("input[type='number']");
+            let totalAmount = 0;
+
+            quantities.forEach(input => {
+                const quantity = parseInt(input.value, 10) || 0;
+                const price = parseFloat(input.getAttribute("data-price"));
+                totalAmount += quantity * price;
+            });
+
+            document.getElementById("total-display").innerText = `Total: £${totalAmount.toFixed(2)}`;
+            return totalAmount;
+        }
+
+        // Listen for quantity changes and update total
+        document.querySelectorAll("input[type='number']").forEach(input => {
+            input.addEventListener("input", calculateTotal);
+        });
+
+        // Render PayPal button with dynamic total
+        paypal.Buttons({
+            createOrder: function(data, actions) {
+                const totalAmount = calculateTotal();
+                return actions.order.create({
+                    purchase_units: [{
+                        amount: {
+                            value: totalAmount.toFixed(2)
+                        }
+                    }]
+                });
+            },
+            onApprove: function(data, actions) {
+                return actions.order.capture().then(function(details) {
+                    alert('Transaction completed by ' + details.payer.name.given_name);
+                });
+            }
+        }).render('#paypal-container');
     </script>
 </body>
 </html>
