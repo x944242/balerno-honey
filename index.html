@@ -23,8 +23,8 @@
         <section class="gallery">
             <!-- Product 1 -->
             <div class="gallery-item">
-                <img src="pentland heather jar.jpg" alt="Pentland Heather Jar">
-                <h2>Pentland Heather Honey</h2>
+                <img src="pentland heather jar.jpg" alt="pentland heather jar">
+                <h2>Scottish Heather Honey</h2>
                 <p>227g</p>
                 <p>£8.00 per jar</p>
                 <label for="qty1">Quantity:</label>
@@ -33,7 +33,7 @@
 
             <!-- Product 2 -->
             <div class="gallery-item">
-                <img src="balerno blossom - jar.jpg" alt="Balerno Blossom Jar">
+                <img src="balerno blossom - jar.jpg" alt="Balerno Blossom jar">
                 <h2>Balerno Blossom</h2>
                 <p>227g</p>
                 <p>£6.50 per jar</p>
@@ -43,87 +43,74 @@
 
             <!-- Product 3 -->
             <div class="gallery-item">
-                <img src="honey1.jpg" alt="Cut Comb">
-                <h2>Cut Comb</h2>
+                <img src="honey1.jpg" alt="Cut comb">
+                <h2>Cut comb</h2>
                 <p>227g</p>
                 <p>£10.00 per box</p>
-                <label for="qty3">Quantity:</label> <!-- Changed to qty3 to avoid duplicate IDs -->
+                <label for="qty3">Quantity:</label>
                 <input type="number" id="qty3" min="0" value="0" data-price="10">
             </div>
         </section>
 
-
-
-
-<!-- Checkout Section -->
-<div class="checkout">
-    <p id="total-display">Total: £0.00</p>
-    <button id="total-button">Calculate Total</button>
-    <div id="paypal-container"></div>
-</div>
-
-
-
-
-
-
-        
+        <!-- Checkout Section -->
+        <div class="checkout">
+            <p id="total-display">Total: £0.00</p>
+            <button id="total-button">Calculate Total</button>
+            <div id="paypal-container"></div>
+        </div>
     </main>
 
     <!-- JavaScript for Total Calculation and PayPal -->
-// JavaScript for Total Calculation and PayPal
-<script>
-    document.addEventListener("DOMContentLoaded", function () {
-        // Calculate and update the total amount based on quantities
-        function calculateTotal() {
-            const quantities = document.querySelectorAll("input[type='number']");
-            let totalAmount = 0;
+    <script src="https://www.paypal.com/sdk/js?client-id=BAAnoglQTYcpdXUPkA1OJMy6KQRpMAXsXMJ8qBLLpJHealisXOvBuUMBoIZTDsAtJ6I_Pxs4o9zlJx_YuI&components=buttons&currency=GBP"></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            // Calculate and update the total amount based on quantities
+            function calculateTotal() {
+                const quantities = document.querySelectorAll("input[type='number']");
+                let totalAmount = 0;
 
-            quantities.forEach(input => {
-                const quantity = parseInt(input.value, 10) || 0;
-                const price = parseFloat(input.getAttribute("data-price"));
-                totalAmount += quantity * price;
+                quantities.forEach(input => {
+                    const quantity = parseInt(input.value, 10) || 0;
+                    const price = parseFloat(input.getAttribute("data-price"));
+                    totalAmount += quantity * price;
+                });
+
+                document.getElementById("total-display").innerText = `Total: £${totalAmount.toFixed(2)}`;
+                return totalAmount;
+            }
+
+            // Listen for quantity changes and update total
+            document.querySelectorAll("input[type='number']").forEach(input => {
+                input.addEventListener("input", calculateTotal);
             });
 
-            document.getElementById("total-display").innerText = `Total: £${totalAmount.toFixed(2)}`;
-            return totalAmount;
-        }
+            // Add functionality to the total button
+            document.getElementById("total-button").addEventListener("click", calculateTotal);
 
-        // Listen for quantity changes and update total
-        document.querySelectorAll("input[type='number']").forEach(input => {
-            input.addEventListener("input", calculateTotal);
+            // Render PayPal button with dynamic total
+            paypal.Buttons({
+                createOrder: function(data, actions) {
+                    const totalAmount = calculateTotal();
+                    return actions.order.create({
+                        purchase_units: [{
+                            amount: {
+                                value: totalAmount.toFixed(2)
+                            }
+                        }]
+                    });
+                },
+                onApprove: function(data, actions) {
+                    return actions.order.capture().then(function(details) {
+                        alert('Transaction completed by ' + details.payer.name.given_name);
+                    });
+                }
+            }).render('#paypal-container');
         });
-
-        // Add functionality to the total button
-        document.getElementById("total-button").addEventListener("click", calculateTotal);
-
-        // Render PayPal button with dynamic total
-        paypal.Buttons({
-            createOrder: function(data, actions) {
-                const totalAmount = calculateTotal();
-                return actions.order.create({
-                    purchase_units: [{
-                        amount: {
-                            value: totalAmount.toFixed(2)
-                        }
-                    }]
-                });
-            },
-            onApprove: function(data, actions) {
-                return actions.order.capture().then(function(details) {
-                    alert('Transaction completed by ' + details.payer.name.given_name);
-                });
-            }
-        }).render('#paypal-container');
-    });
-</script>
+    </script>
 
     <!-- Footer Section -->
     <footer>
         <p>Contact us: <a href="mailto:colin@finescottishhoney.co.uk">colin@finescottishhoney.co.uk</a></p>
     </footer>
-
-    <!-- PayPal SDK -->
-    <script src="https://www.paypal.com/sdk/js?client-id=BAAnoglQTYcpdXUPkA1OJMy6KQRpMAXsXMJ8qBLLpJHealisXOvBuUMBoIZTDsAtJ6I_Pxs4o9zlJx_YuI&components=buttons&currency=GBP"></script>
 </body>
 </html>
