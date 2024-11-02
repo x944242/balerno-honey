@@ -1,43 +1,30 @@
 <!DOCTYPE html>
-<html lang ="en">
-  <head>
+<html lang="en">
+<head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Balerno Honey</title>
-  </head>
+    <link rel="stylesheet" href="styles.css">
+    <script defer src="script.js"></script>
+</head>
+<body>
+    <!-- Header Section -->
+    <header>
+        <h1>Balerno Honey</h1>
+        <p>Your source for local, handcrafted honey in Balerno, Scotland</p>
+    </header>
 
-  <body>
-    <h1>Balerno Honey</h1>
-    <p>Ths site is going to be great!</p>
-    <p>is produced here in Balerno in small batches from our own apiary. We have one of the best locations in Scotland for honey, with abundant spring pollen and nectar from the rich and biodiverse fauna around the water of leith, local woodlands, meadows and hedgerows. In late spring, and sometimes nectar bearing crops in the nearby farms. By late summer, if weather smiles, the lime treess burst into bloom for a short period in late July sending the bees into an excited frenzy.</p>
-  
+    <!-- Introductory Section -->
+    <section class="intro">
+        <p>Our honey is crafted in small batches at our Balerno apiary, where bees gather nectar from the rich biodiversity around the Water of Leith, local woodlands, meadows, and hedgerows. With a landscape abundant in flora, our bees are treated to an array of pollen and nectar sources throughout spring and summer, including bursts of lime tree blossoms that send them into a joyful frenzy in late July.</p>
+    </section>
 
-<br>
-<br>
-  <script src="https://www.paypal.com/sdk/js?client-id=BAAnoglQTYcpdXUPkA1OJMy6KQRpMAXsXMJ8qBLLpJHealisXOvBuUMBoIZTDsAtJ6I_Pxs4o9zlJx_YuI&components=hosted-buttons&disable-funding=venmo&currency=GBP"></script>
-<div id="paypal-container-93UXNLBGQU2F6"></div>
-<script>
-  paypal.HostedButtons({
-    hostedButtonId: "93UXNLBGQU2F6",
-  }).render("#paypal-container-93UXNLBGQU2F6")
-</script>
-
-<br>
-  
-  <script src="https://www.paypal.com/sdk/js?client-id=BAAnoglQTYcpdXUPkA1OJMy6KQRpMAXsXMJ8qBLLpJHealisXOvBuUMBoIZTDsAtJ6I_Pxs4o9zlJx_YuI&components=hosted-buttons&disable-funding=venmo&currency=GBP"></script>
-<div id="paypal-container-Z76SFT9XKAZ8L"></div>
-<script>
-  paypal.HostedButtons({
-    hostedButtonId: "Z76SFT9XKAZ8L",
-  }).render("#paypal-container-Z76SFT9XKAZ8L")
-</script>
-
-
-        <main>
+    <!-- Product Gallery Section -->
+    <main>
         <section class="gallery">
             <!-- Product 1 -->
             <div class="gallery-item">
-                <img src="honey1.jpg" alt="Honey Jar 1">
+                <img src="honey1.jpg" alt="Scottish Heather Honey">
                 <h2>Scottish Heather Honey</h2>
                 <p>£10.00 per jar</p>
                 <label for="qty1">Quantity:</label>
@@ -46,7 +33,7 @@
 
             <!-- Product 2 -->
             <div class="gallery-item">
-                <img src="honey2.jpg" alt="Honey Jar 2">
+                <img src="honey2.jpg" alt="Wildflower Honey">
                 <h2>Wildflower Honey</h2>
                 <p>£8.00 per jar</p>
                 <label for="qty2">Quantity:</label>
@@ -55,7 +42,7 @@
 
             <!-- Product 3 -->
             <div class="gallery-item">
-                <img src="honey3.jpg" alt="Honey Jar 3">
+                <img src="honey3.jpg" alt="Ratho Special Reserve">
                 <h2>Ratho Special Reserve</h2>
                 <p>£12.00 per jar</p>
                 <label for="qty3">Quantity:</label>
@@ -63,11 +50,32 @@
             </div>
         </section>
 
+        <!-- Checkout Section -->
         <div class="checkout">
             <p id="total-display">Total: £0.00</p>
             <button id="paypal-button">Pay with PayPal</button>
         </div>
+
+        <!-- PayPal Buttons (Optional) -->
+        <div id="paypal-container-93UXNLBGQU2F6"></div>
+        <div id="paypal-container-Z76SFT9XKAZ8L"></div>
     </main>
 
+    <!-- Footer Section -->
+    <footer>
+        <p>Contact us for orders and inquiries: <a href="mailto:honey@localhives.co.uk">honey@localhives.co.uk</a></p>
+    </footer>
+
+    <!-- PayPal Scripts -->
+    <script src="https://www.paypal.com/sdk/js?client-id=BAAnoglQTYcpdXUPkA1OJMy6KQRpMAXsXMJ8qBLLpJHealisXOvBuUMBoIZTDsAtJ6I_Pxs4o9zlJx_YuI&components=hosted-buttons&disable-funding=venmo&currency=GBP"></script>
+    <script>
+        paypal.HostedButtons({
+            hostedButtonId: "93UXNLBGQU2F6",
+        }).render("#paypal-container-93UXNLBGQU2F6");
+
+        paypal.HostedButtons({
+            hostedButtonId: "Z76SFT9XKAZ8L",
+        }).render("#paypal-container-Z76SFT9XKAZ8L");
+    </script>
 </body>
 </html>
