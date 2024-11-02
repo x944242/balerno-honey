@@ -77,7 +77,9 @@
                     totalAmount += quantity * price; // Calculate the total
                 });
 
+                // Display the total amount
                 document.getElementById("total-display").innerText = `Total: £${totalAmount.toFixed(2)}`; // Update the displayed total
+                console.log(`Calculated Total: £${totalAmount.toFixed(2)}`); // Log for debugging
                 return totalAmount; // Return the total for PayPal
             }
 
@@ -87,7 +89,10 @@
             });
 
             // Add functionality to the total button
-            document.getElementById("total-button").addEventListener("click", calculateTotal); // Calculate total on button click
+            document.getElementById("total-button").addEventListener("click", function() {
+                const totalAmount = calculateTotal(); // Calculate total on button click
+                console.log(`Total Amount on Button Click: £${totalAmount.toFixed(2)}`); // Log for debugging
+            });
 
             // Render PayPal button with dynamic total
             paypal.Buttons({
