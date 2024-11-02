@@ -2,7 +2,7 @@
 body {
     font-family: Arial, sans-serif;
     color: #4E342E;
-    background-color: #FFF8E1;
+    background-color: #99C3C7;
     margin: 0;
     padding: 0;
 }
@@ -76,12 +76,12 @@ header {
 
 #total-display {
     font-size: 1.2em;
-    color: #4397EO;
+    color: #CSE7EB;
 }
 
 /* Footer Styling */
 footer {
-    background-color: #FFAB40;
+    background-color: #99C3C7;
     color: white;
     text-align: center;
     padding: 10px;
