@@ -55,10 +55,25 @@ header {
 
 /* Checkout Section */
 .checkout {
-    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     margin: 20px 0;
 }
 
+#total-display {
+    font-size: 1.2em;
+    color: #C5E7EB;
+    margin-bottom: 10px;
+}
+
+#paypal-button-container {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+}
+
+/* Button Styling */
 #paypal-button {
     background-color: #FFAB40;
     color: white;
@@ -72,11 +87,6 @@ header {
 
 #paypal-button:hover {
     background-color: #D84315;
-}
-
-#total-display {
-    font-size: 1.2em;
-    color: #CSE7EB;
 }
 
 /* Footer Styling */
