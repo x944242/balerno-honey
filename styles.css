@@ -1,0 +1,88 @@
+/* Base Styles */
+body {
+    font-family: Arial, sans-serif;
+    color: #4E342E;
+    background-color: #FFF8E1;
+    margin: 0;
+    padding: 0;
+}
+
+/* Header Styling */
+header {
+    background-color: #FFAB40;
+    color: white;
+    padding: 20px;
+    text-align: center;
+}
+
+/* Introductory Section */
+.intro {
+    padding: 20px;
+    font-size: 1.1em;
+    line-height: 1.6;
+    text-align: center;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+/* Gallery Styling */
+.gallery {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    padding: 20px;
+}
+
+.gallery-item {
+    background-color: #FFE0B2;
+    padding: 15px;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    width: 300px;
+}
+
+.gallery-item img {
+    width: 100%;
+    border-radius: 8px;
+}
+
+.gallery-item h2 {
+    color: #D84315;
+    margin: 10px 0 5px;
+}
+
+/* Checkout Section */
+.checkout {
+    text-align: center;
+    margin: 20px 0;
+}
+
+#paypal-button {
+    background-color: #FFAB40;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    font-size: 1em;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+#paypal-button:hover {
+    background-color: #D84315;
+}
+
+#total-display {
+    font-size: 1.2em;
+    color: #4E342E;
+}
+
+/* Footer Styling */
+footer {
+    background-color: #FFAB40;
+    color: white;
+    text-align: center;
+    padding: 10px;
+}
