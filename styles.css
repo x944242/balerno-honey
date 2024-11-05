@@ -98,7 +98,7 @@ label {
 }
 
 input[type="number"] {
-    width: 50px; /* Set a specific width */
+    width: 20px; /* Set a specific width */
     padding: 5px; /* Add padding for comfort */
     border: 1px solid #A4C2B2; /* Soft Duck Egg Blue border */
     border-radius: 4px; /* Round the corners */
