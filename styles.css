@@ -15,9 +15,12 @@ header {
     background-position: center; /* Centers the image within the header */
     background-repeat: no-repeat; /* Prevents the image from repeating */
     color: #ffffff; /* White text */
-    padding: 30px 20px; /* Adjust padding as needed */
-    text-align: center; /* Centers text */
-    height: 200px;
+    padding: 100px 20px; /* Adjust padding as needed */
+    min-height: 350px;
+    display: flex;
+    flex-direction:
+    justify-content: center;
+    align-items: center;
 }
 
 header h1 {
