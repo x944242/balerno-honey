@@ -26,31 +26,24 @@ header {
 }
 
 /* Gallery Styling */
-.gallery {
+.product-gallery {
     display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 20px;
-    padding: 20px;
+    justify-content: space-between; /* Distributes products evenly across the row */
+    gap: 20px; /* Adjust space between product items */
+    margin: 0 auto; /* Centers the gallery */
+    max-width: 100%; /* Ensures the gallery stays within the viewport */
+
 }
 
-.gallery-item {
-    background-color: #9fab46;
-    padding: 15px;
-    border-radius: 10px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    text-align: center;
-    width: 300px;
-}
 
-.gallery-item img {
-    width: 100%;
-    border-radius: 8px;
-}
+.product-item {
+    flex-grow: 1;
+    text-align: center; /* Centers text and elements inside each product */
+    max-width: calc(100% / 3 - 20px); /* Adjust based on number of products */
 
-.gallery-item h2 {
-    color: #6bab46;
-    margin: 10px 0 5px;
+.product-photo {
+    width: 100%; /* Adjusts image width to container */
+    height: auto; /* Maintains image aspect ratio */
 }
 
 /* Checkout Section */
