@@ -9,15 +9,16 @@ body {
 
 /* Header Styling */
 header {
-    height: 350px;
+    
     font-family: 'Montserrat';
     background-image: url('balerno blossom - jar.jpg'); /* Replace with your image path */
     background-size: cover; /* Ensures the image covers the entire header */
     background-position: center; /* Centers the image within the header */
     background-repeat: no-repeat; /* Prevents the image from repeating */
     color: #ffffff; /* White text */
-    padding: 40px 20px; /* Adjust padding as needed */
+    padding: 60px 20px; /* Adjust padding as needed */
     text-align: center; /* Centers text */
+    height: 400px;
 }
 
 header h1 {
