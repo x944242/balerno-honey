@@ -14,7 +14,8 @@ header {
     background-position: center; /* Centers the image within the header */
     background-repeat: no-repeat; /* Prevents the image from repeating */
     color: #ffffff; /* White text */
-    padding: 50px 200px; /* Adjust padding as needed */
+    padding: 50px 2
+        0px; /* Adjust padding as needed */
     min-height: 250px;
     display: flex;
     justify-content: center;
