@@ -1,6 +1,6 @@
 /* Base Styles */
 body {
-    font-family: Georgia, sans-serif;
+    font-family: 'roboto';
     color: #5A6E70; /* Muted grey-green text */
     background-color: #D1E7E3; /* Light Duck Egg Blue background */
     margin: 0;
@@ -9,6 +9,7 @@ body {
 
 /* Header Styling */
 header {
+    font-family: 'Montserrat';
     background-image: url('balerno blossom - jar.jpg'); /* Replace with your image path */
     background-size: cover; /* Ensures the image covers the entire header */
     background-position: center; /* Centers the image within the header */
