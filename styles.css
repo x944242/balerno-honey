@@ -10,7 +10,6 @@ body {
 /* Header Styling */
 header {
     
-    font-family: 'Montserrat';
     background-image: url('balerno blossom - jar.jpg'); /* Replace with your image path */
     background-size: cover; /* Ensures the image covers the entire header */
     background-position: center; /* Centers the image within the header */
