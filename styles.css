@@ -1,8 +1,8 @@
 /* Base Styles */
 body {
     font-family: Arial, sans-serif;
-    color: #B2C4B2;
-    background-color: #eb5e34;
+    color: #333; /* Changed to a darker color for better readability */
+    background-color: #f7f3e9; /* Softer background color */
     margin: 0;
     padding: 0;
 }
@@ -13,6 +13,7 @@ header {
     color: white;
     padding: 20px;
     text-align: center;
+    font-size: 1.5em;
 }
 
 /* Introductory Section */
@@ -25,25 +26,32 @@ header {
     margin: 0 auto;
 }
 
-/* Gallery Styling */
+/* Product Gallery Styling */
 .product-gallery {
     display: flex;
-    justify-content: space-between; /* Distributes products evenly across the row */
-    gap: 20px; /* Adjust space between product items */
-    margin: 0 auto; /* Centers the gallery */
-    max-width: 100%; /* Ensures the gallery stays within the viewport */
-
+    justify-content: space-between;
+    gap: 20px;
+    padding: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
 }
 
-
 .product-item {
-    flex-grow: 1;
-    text-align: center; /* Centers text and elements inside each product */
-    max-width: calc(100% / 3 - 20px); /* Adjust based on number of products */
+    flex: 1;
+    background-color: #fff;
+    padding: 15px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    text-align: center;
+    max-width: calc(33% - 20px); /* 3 items per row */
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+}
 
 .product-photo {
-    width: 100%; /* Adjusts image width to container */
-    height: auto; /* Maintains image aspect ratio */
+    width: 100%;
+    max-width: 150px; /* Limits image size */
+    height: auto;
+    margin-bottom: 15px;
 }
 
 /* Checkout Section */
@@ -55,20 +63,13 @@ header {
 }
 
 #total-display {
-    font-size: 1.2em;
-    color: #46ab95;
+    font-size: 1.3em;
+    color: #4675ab;
     margin-bottom: 10px;
 }
 
-#paypal-button-container {
-    display: flex;
-    justify-content: center;
-    width: 100%;
-}
-
-/* Button Styling */
-#paypal-button {
-    background-color: #4675ab;
+#total-button {
+    background-color: #ebae34;
     color: white;
     padding: 10px 20px;
     border: none;
@@ -78,8 +79,8 @@ header {
     transition: background-color 0.3s;
 }
 
-#paypal-button:hover {
-    background-color: #6346ab;
+#total-button:hover {
+    background-color: #b88c29;
 }
 
 /* Footer Styling */
@@ -88,4 +89,13 @@ footer {
     color: white;
     text-align: center;
     padding: 10px;
+}
+
+footer a {
+    color: #fff;
+    text-decoration: underline;
+}
+
+footer a:hover {
+    color: #ebae34;
 }
