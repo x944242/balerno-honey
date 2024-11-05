@@ -13,9 +13,8 @@ header {
     background-image: url('balerno blossom - jar.jpg'); /* Replace with your image path */
     background-position: center; /* Centers the image within the header */
     background-repeat: no-repeat; /* Prevents the image from repeating */
-    color: #ffffff; /* White text */
-    padding: 50px 2
-        0px; /* Adjust padding as needed */
+    color: #ffffff;ghjk /* White text */
+    padding: 50px 20px; /* Adjust padding as needed */
     min-height: 250px;
     display: flex;
     justify-content: center;
