@@ -89,6 +89,33 @@ label, input[type="number"] {
     margin-top: 10px;
     font-size: 1em;
 }
+input[type="number"] {
+    width: 50px; /* Set a specific width */
+    padding: 5px; /* Add padding for comfort */
+    border: 1px solid #ccc; /* Set a light border */
+    border-radius: 4px; /* Round the corners */
+    font-size: 1em; /* Maintain your existing font size */
+}
+
+/* Styles for Quantity Input Boxes */
+input[type="number"] {
+    width: 60px; /* Adjusts the width */
+    padding: 5px;
+    font-size: 1em;
+    border: 1px solid #B2C4B2; /* Matches the color scheme */
+    border-radius: 4px;
+    text-align: center;
+    background-color: #f9f9f9;
+    color: #333;
+    margin-top: 10px; /* Adds some spacing above */
+    box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1);
+    transition: border-color 0.3s ease; /* Adds a smooth border color transition */
+}
+
+input[type="number"]:focus {
+    border-color: #ebae34; /* Highlight border on focus */
+    outline: none; /* Removes the default outline */
+}
 
 /* Checkout Section */
 .checkout {
