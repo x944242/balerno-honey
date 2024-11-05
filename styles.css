@@ -68,20 +68,8 @@ header {
     margin-bottom: 10px;
 }
 
-#total-button {
-    background-color: #ebae34;
-    color: white;
-    padding: 10px 20px;
-    border: none;
-    border-radius: 5px;
-    font-size: 1em;
-    cursor: pointer;
-    transition: background-color 0.3s;
-}
 
-#total-button:hover {
-    background-color: #b88c29;
-}
+
 
 /* Footer Styling */
 footer {
