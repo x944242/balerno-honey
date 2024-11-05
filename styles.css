@@ -58,7 +58,7 @@ header p {
 }
 
 .product-item {
-    flex: 1 1 32%; /* Allows three items per row with flexibility */
+    flex: 0 0 calc(33.33% - 20px); /* Ensures 3 items per row with spacing */
     
     background-color: #ffffff; /* White background */
     border-radius: 8px;
