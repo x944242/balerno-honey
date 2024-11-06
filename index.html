@@ -53,34 +53,34 @@
         </section>
 -->
 <section>
-    <table class="product-table">
-        <tr>
-            <td class="product-cell">
-                <img src="pentland heather jar.jpg" alt="Product 1" class="product-photo">
-                <h3>Pentland Heather</h3>
-                <p>Dark, rich and powerfully aromatic heather from the hills</p>
-                <p>£8.00</p>
-                <label for="quantity1">Quantity:</label>
-                <input type="number" id="quantity1" min="0" value="0" data-price="8>
-            </td>
-            <td class="product-cell">
-                <img src="pentland heather jar.jpg" alt="Product 2" class="product-photo">
-                <h3>Balerno Blossom</h3>
-                <p>Packed with enzynes and micropollens from our local Balerno fauna</p>
-                <p>£6.50</p>
-                <label for="quantity2">Quantity:</label>
-                <input type="number" id="quantity2" min="1" max="99" value="1">
-            </td>
-            <td class="product-cell">
-                <img src="pentland heather jar.jpg" alt="Product 3" class="product-photo">
-                <h3>Cut comb</h3>
-                <p>Raw comb. Perfect for deserts or sliced on toast or oatcakes</p>
-                <p>£10.00</p>
-                <label for="quantity3">Quantity:</label>
-                <input type="number" id="quantity3" min="1" max="99" value="1">
-            </td>
-        </tr>
-    </table>
+    <<table class="product-table">
+            <tr>
+                <td class="product-cell">
+                    <img src="pentland heather jar.jpg" alt="Pentland Heather Jar" class="product-photo">
+                    <h3>Pentland Heather</h3>
+                    <p>Dark, rich and powerfully aromatic heather from the hills</p>
+                    <p>£8.00</p>
+                    <label for="quantity1">Quantity:</label>
+                    <input type="number" id="quantity1" min="0" value="0" data-price="8">
+                </td>
+                <td class="product-cell">
+                    <img src="pentland heather jar.jpg" alt="Balerno Blossom" class="product-photo">
+                    <h3>Balerno Blossom</h3>
+                    <p>Packed with enzymes and micropollens from our local Balerno fauna</p>
+                    <p>£6.50</p>
+                    <label for="quantity2">Quantity:</label>
+                    <input type="number" id="quantity2" min="0" value="0" data-price="6.50">
+                </td>
+                <td class="product-cell">
+                    <img src="pentland heather jar.jpg" alt="Cut Comb" class="product-photo">
+                    <h3>Cut Comb</h3>
+                    <p>Raw comb. Perfect for desserts or sliced on toast or oatcakes</p>
+                    <p>£10.00</p>
+                    <label for="quantity3">Quantity:</label>
+                    <input type="number" id="quantity3" min="0" value="0" data-price="10">
+                </td>
+            </tr>
+        </table>
 
     </section/>
         
@@ -97,6 +97,7 @@
     <script src="https://www.paypal.com/sdk/js?client-id=BAAnoglQTYcpdXUPkA1OJMy6KQRpMAXsXMJ8qBLLpJHealisXOvBuUMBoIZTDsAtJ6I_Pxs4o9zlJx_YuI&components=buttons&currency=GBP"></script>
     
     <!-- JavaScript for Total Calculation and PayPal -->
+     <!-- JavaScript for Total Calculation and PayPal -->
     <script>
         document.addEventListener("DOMContentLoaded", function () {
             // Calculate and update the total amount based on quantities
@@ -111,21 +112,17 @@
                 });
 
                 // Display the total amount
-                document.getElementById("total-display").innerText = `Total: £${totalAmount.toFixed(2)}`; // Update the displayed total
-                console.log(`Calculated Total: £${totalAmount.toFixed(2)}`); // Log for debugging
+                document.getElementById("total-display").innerText = `Total: £${totalAmount.toFixed(2)}`;
                 return totalAmount; // Return the total for PayPal
             }
 
             // Listen for quantity changes and update total
             document.querySelectorAll("input[type='number']").forEach(input => {
-                input.addEventListener("input", calculateTotal); // Update total on input change
+                input.addEventListener("input", calculateTotal);
             });
 
             // Add functionality to the total button
-            document.getElementById("total-button").addEventListener("click", function() {
-                const totalAmount = calculateTotal(); // Calculate total on button click
-                console.log(`Total Amount on Button Click: £${totalAmount.toFixed(2)}`); // Log for debugging
-            });
+            document.getElementById("total-button").addEventListener("click", calculateTotal);
 
             // Render PayPal button with dynamic total
             paypal.Buttons({
@@ -141,10 +138,10 @@
                 },
                 onApprove: function(data, actions) {
                     return actions.order.capture().then(function(details) {
-                        alert('Transaction completed by ' + details.payer.name.given_name); // Success message
+                        alert('Transaction completed by ' + details.payer.name.given_name);
                     });
                 }
-            }).render('#paypal-container'); // Render PayPal button
+            }).render('#paypal-container');
         });
     </script>
 
