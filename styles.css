@@ -172,3 +172,10 @@ footer a {
 footer a:hover {
     color: #B4D3D0; /* Light Duck Egg Blue on hover */
 }
+
+.footer a img {
+    width: 20px;
+    height: 20px;
+    margin-left: 8px;
+    vertical-align: middle;
+}
