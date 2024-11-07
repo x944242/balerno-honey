@@ -36,6 +36,7 @@ header p {
 
 /* Introductory Section */
 .intro {
+    width: 100%;
     padding: 20px;
     font-size: 1.1em;
     line-height: 1.6;
