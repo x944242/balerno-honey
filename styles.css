@@ -22,6 +22,15 @@ header {
     align-items: center;
 }
 
+
+header img
+{
+    width: 100%;
+    height: auto;
+    display: block;
+}
+    
+    
 header h1 {
     font-size: 2.5em; /* Adjust for visibility */
     margin: 0; /* Remove default margin */
@@ -36,7 +45,7 @@ header p {
 
 /* Introductory Section */
 .intro {
-    width: 100%;
+    
     padding: 20px;
     font-size: 1.1em;
     line-height: 1.6;
