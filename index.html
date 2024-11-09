@@ -54,10 +54,61 @@
 
     <!-- Checkout Section -->
     <div class="checkout">
-        <p id="total-display">Total: £0.00</p>
-        <button id="total-button">Calculate Total</button>
+    <div id="total-display">Total: £<span id="total-amount">0.00</span></div>
+
+    <!-- Delivery Options -->
+    <label for="delivery-option">Choose Delivery Option:</label>
+    <div class="delivery-options">
+        <input type="radio" id="free-delivery" name="delivery" value="0" checked>
+        <label for="free-delivery">Free Delivery</label>
+
+        <input type="radio" id="postal-delivery" name="delivery" value="2.99">
+        <label for="postal-delivery">Postal Delivery (£2.99)</label>
     </div>
 
+    <!-- Checkout Button -->
+    <button id="total-button" onclick="calculateTotal()">Proceed to Payment</button>
+
+    <!-- Stripe/PayPal placeholder -->
+    <div id="paypal-container"></div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
     <!-- JavaScript for Total Calculation -->
     <script>
         document.addEventListener("DOMContentLoaded", function () {
