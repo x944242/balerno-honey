@@ -5,22 +5,39 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Balerno Honey</title>
     <link rel="stylesheet" href="styles.css">
+    <style>
+        /* Additional styling for the header background */
+        header {
+            background: url('pentland heather jar.jpg') center/cover no-repeat;
+            height: 200px;
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+        }
+
+        header h1 {
+            font-size: 3em;
+            background-color: rgba(0, 0, 0, 0.6);
+            padding: 10px;
+            border-radius: 8px;
+            position: absolute;
+        }
+    </style>
 </head>
 <body>
-    <!-- Header Section -->
+    <!-- Header Section with Background Image -->
     <header>
-        <h1>boo</h1>
-        <img src="pentland heather jar.jpg" height="75px"/>
+        <h1>NEW</h1>
     </header>
 
     <!-- Introductory Section -->
     <section class="intro">
         <p>Fine local honey packed from local pollen and nectar.</p>
-        
     </section>
 
     <!-- Product Gallery Section -->
-    
     <main>
         <section class="gallery">
             <div class="product-gallery">
@@ -52,55 +69,15 @@
                 </div>
             </div>
         </section>
-<!--
-    
-<section>
-    <<table class="product-table">
-            <tr>
-                <td class="product-cell">
-                    <img src="pentland heather jar.jpg" alt="Pentland Heather Jar" class="product-photo">
-                    <h3>Pentland Heather</h3>
-                    <p>Dark, rich and powerfully aromatic heather from the hills</p>
-                    <p>£8.00</p>
-                    <label for="quantity1">Quantity:</label>
-                    <input type="number" id="quantity1" min="0" value="0" data-price="8">
-                </td>
-                <td class="product-cell">
-                    <img src="pentland heather jar.jpg" alt="Balerno Blossom" class="product-photo">
-                    <h3>Balerno Blossom</h3>
-                    <p>Packed with enzymes and micropollens from around Balerno</p>
-                    <p>£6.50</p>
-                    <label for="quantity2">Quantity:</label>
-                    <input type="number" id="quantity2" min="0" value="0" data-price="6.50">
-                </td>
-                <td class="product-cell">
-                    <img src="pentland heather jar.jpg" alt="Cut Comb Honey " class="product-photo">
-                    <h3>Cut Comb</h3>
-                    <p>Raw comb. Perfect for desserts or sliced on toast or oatcakes</p>
-                    <p>£10.00</p>
-                    <label for="quantity3">Quantity:</label>
-                    <input type="number" id="quantity3" min="0" value="0" data-price="10">
-                </td>
-            </tr>
-        </table>
-
-    </section/>
--->
-        
     </main>
 
     <!-- Checkout Section -->
     <div class="checkout">
         <p id="total-display">Total: £0.00</p>
-        <button id="total-button"></button>
-        <div id="paypal-container"></div>
+        <button id="total-button">Calculate Total</button>
     </div>
 
-    <!-- PayPal SDK -->
-    <script src="https://www.paypal.com/sdk/js?client-id=BAAnoglQTYcpdXUPkA1OJMy6KQRpMAXsXMJ8qBLLpJHealisXOvBuUMBoIZTDsAtJ6I_Pxs4o9zlJx_YuI&components=buttons&currency=GBP"></script>
-    
-    <!-- JavaScript for Total Calculation and PayPal -->
-     <!-- JavaScript for Total Calculation and PayPal -->
+    <!-- JavaScript for Total Calculation -->
     <script>
         document.addEventListener("DOMContentLoaded", function () {
             // Calculate and update the total amount based on quantities
@@ -126,72 +103,26 @@
 
             // Add functionality to the total button
             document.getElementById("total-button").addEventListener("click", calculateTotal);
-
-            // Render PayPal button with dynamic total
-            paypal.Buttons({
-                createOrder: function(data, actions) {
-                    const totalAmount = calculateTotal(); // Get the total amount
-                    return actions.order.create({
-                        purchase_units: [{
-                            amount: {
-                                value: totalAmount.toFixed(2) // Set total amount for PayPal
-                            }
-                        }]
-                    });
-                },
-                onApprove: function(data, actions) {
-                    return actions.order.capture().then(function(details) {
-                        alert('Transaction completed by ' + details.payer.name.given_name);
-                    });
-                }
-            }).render('#paypal-container');
         });
     </script>
 
-
-    <section>
-        <div id="paypal-button-container-P-32E29843854051920M4KW32A"></div>
-<script src="https://www.paypal.com/sdk/js?client-id=Af6tm7ifkqz37sn8k1iy8fRaIqMXYCnEtHm1vXvRgQg95pDG4wbX5eLa6DvZx61u8FrzP9xAsO2uQBar&vault=true&intent=subscription" data-sdk-integration-source="button-factory"></script>
-<script>
-  paypal.Buttons({
-      style: {
-          shape: 'rect',
-          color: 'gold',
-          layout: 'vertical',
-          label: 'subscribe'
-      },
-      createSubscription: function(data, actions) {
-        return actions.subscription.create({
-          /* Creates the subscription */
-          plan_id: 'P-32E29843854051920M4KW32A'
-        });
-      },
-      onApprove: function(data, actions) {
-        alert(data.subscriptionID); // You can add optional success message for the subscriber here
-      }
-  }).render('#paypal-button-container-P-32E29843854051920M4KW32A'); // Renders the PayPal button
-</script>
-    </section>
-
-    
     <!-- Footer Section -->
-    <!-- Facebook Link in Footer Section -->
-<footer>
-    <p><!-- Email Link with Icon -->
-        Email us: <a href="mailto:colin@finescottishhoney.co.uk" target="_blank" rel="noopener noreferrer">
-    <img src="https://img.icons8.com/color/48/000000/email.png" alt="Email Icon" style="width: 20px; height: 20px; vertical-align: middle;">
-</a>
-        <!-- WhatsApp Link -->
-           Whatsapp: 
-       <a href="https://wa.me/07783568190" target="_blank" rel="noopener noreferrer nofollow">
-    <img src="https://img.icons8.com/color/48/000000/whatsapp.png" alt="WhatsApp Icon" style="width: 20px; height: 20px; vertical-align: middle;">
-</a>     
-    Follow us at 
-<a href="https://www.facebook.com/BalernoHoney" target="_blank" rel="noopener noreferrer nofollow">
-    <img src="https://img.icons8.com/color/48/000000/facebook.png" alt="Facebook Icon" style="width: 20px; height: 20px; vertical-align: middle;">
-</a>
-    </p>
-</footer>
+    <footer>
+        <p>Email us:
+            <a href="mailto:colin@finescottishhoney.co.uk" target="_blank" rel="noopener noreferrer">
+                <img src="https://img.icons8.com/color/48/000000/email.png" alt="Email Icon" style="width: 20px; height: 20px; vertical-align: middle;">
+            </a>
+            Whatsapp:
+            <a href="https://wa.me/07783568190" target="_blank" rel="noopener noreferrer nofollow">
+                <img src="https://img.icons8.com/color/48/000000/whatsapp.png" alt="WhatsApp Icon" style="width: 20px; height: 20px; vertical-align: middle;">
+            </a>
+            Follow us at
+            <a href="https://www.facebook.com/BalernoHoney" target="_blank" rel="noopener noreferrer nofollow">
+                <img src="https://img.icons8.com/color/48/000000/facebook.png" alt="Facebook Icon" style="width: 20px; height: 20px; vertical-align: middle;">
+            </a>
+        </p>
+    </footer>
 
 </body>
 </html>
+
