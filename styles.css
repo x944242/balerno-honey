@@ -1,50 +1,36 @@
-
 /* Base Styles */
 body {
-    font-family: 'roboto';
-    color: #5A6E70; /* Muted grey-green text */
-    background-color: #D1E7E3; /* Light Duck Egg Blue background */
+    font-family: 'Roboto', sans-serif;
+    color: #5A6E70;
+    background-color: #D1E7E3;
     margin: 0;
     padding: 0;
 }
 
 /* Header Styling */
 header {
-    
-    
-
-    color: #ffffff;ghjk /* White text */
-    padding: 50px 20px; /* Adjust padding as needed */
+    background: url("pentland_heather_jar.jpg") no-repeat center center/cover;
+    color: #ffffff;
+    padding: 50px 20px;
     min-height: 250px;
     display: flex;
     justify-content: center;
     align-items: center;
+    position: relative;
 }
 
-
-header img
-{
-    width: 100%;
-    height: auto;
-    display: block;
-}
-    
-    
+/* Overlay text on header */
 header h1 {
-    font-size: 2.5em; /* Adjust for visibility */
-    margin: 0; /* Remove default margin */
-    color: #B4D3D0; /* Soft Duck Egg Blue text */
-}
-
-header p {
-    font-size: 1.2em; /* Adjust font size for description */
-    margin: 10px 0 0; /* Adjust margin for spacing */
-    color: #A4C2B2; /* Lighter Duck Egg Blue */
+    font-size: 3em;
+    color: #B4D3D0;
+    margin: 0;
+    background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent background for contrast */
+    padding: 10px 20px;
+    border-radius: 8px;
 }
 
 /* Introductory Section */
 .intro {
-    
     padding: 20px;
     font-size: 1.1em;
     line-height: 1.6;
@@ -52,7 +38,7 @@ header p {
     max-width: 800px;
     margin: 0 auto;
     color: #ffffff;
-    background-color: #A4C2B2; /* Lighter Duck Egg Blue background */
+    background-color: #A4C2B2;
     border-radius: 8px;
 }
 
@@ -68,16 +54,15 @@ header p {
 }
 
 .product-item {
-    flex: 0 0 calc(33.33% - 20px); /* Ensures 3 items per row with spacing */
-    
-    background-color: #ffffff; /* White background */
+    flex: 0 0 calc(33.33% - 20px);
+    background-color: #ffffff;
     border-radius: 8px;
     padding: 15px;
     text-align: center;
-    color: #5A6E70; /* Muted grey-green text */
+    color: #5A6E70;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     transition: transform 0.2s, box-shadow 0.2s;
-    margin-bottom: 20px; /* Space below each product */
+    margin-bottom: 20px;
 }
 
 .product-item:hover {
@@ -94,30 +79,29 @@ header p {
 
 .product-item h2 {
     font-size: 1.4em;
-    color: #A4C2B2; /* Light Duck Egg Blue heading */
+    color: #A4C2B2;
     margin: 10px 0 5px;
 }
 
 .product-item p {
     margin: 5px 0;
-    color: #5A6E70; /* Muted grey-green text */
+    color: #5A6E70;
 }
 
-/* Styles for labels and inputs */
 label {
-    display: block; /* Ensure label is on a new line */
+    display: block;
     margin-top: 10px;
     font-size: 1em;
-    color: #5A6E70; /* Muted grey-green label */
+    color: #5A6E70;
 }
 
 input[type="number"] {
-    width: 20px; /* Set a specific width */
-    padding: 5px; /* Add padding for comfort */
-    border: 1px solid #A4C2B2; /* Soft Duck Egg Blue border */
-    border-radius: 4px; /* Round the corners */
-    font-size: 1em; /* Maintain existing font size */
-    background-color: #F4F9F6; /* Light neutral background for input */
+    width: 20px;
+    padding: 5px;
+    border: 1px solid #A4C2B2;
+    border-radius: 4px;
+    font-size: 1em;
+    background-color: #F4F9F6;
 }
 
 /* Checkout Section */
@@ -136,12 +120,12 @@ input[type="number"] {
 
 #total-display {
     font-size: 1.2em;
-    color: #4E8B7A; /* Darker teal/duck egg color */
+    color: #4E8B7A;
     margin-bottom: 10px;
 }
 
 #total-button {
-    background-color: #A4C2B2; /* Duck Egg Blue */
+    background-color: #A4C2B2;
     color: white;
     padding: 10px 20px;
     border: none;
@@ -153,17 +137,12 @@ input[type="number"] {
 }
 
 #total-button:hover {
-    background-color: #8DAE9C; /* Darker shade of Duck Egg Blue */
-}
-
-#paypal-container {
-    width: 100%;
-    margin-top: 15px;
+    background-color: #8DAE9C;
 }
 
 /* Footer Styling */
 footer {
-    background-color: #4E8B7A; /* Dark teal footer */
+    background-color: #4E8B7A;
     color: white;
     text-align: center;
     padding: 10px;
@@ -180,7 +159,7 @@ footer a {
 }
 
 footer a:hover {
-    color: #B4D3D0; /* Light Duck Egg Blue on hover */
+    color: #B4D3D0;
 }
 
 .footer a img {
@@ -189,3 +168,4 @@ footer a:hover {
     margin-left: 8px;
     vertical-align: middle;
 }
+
