@@ -69,9 +69,7 @@
     <!-- Checkout Button -->
     <button id="total-button" onclick="calculateTotal()">Proceed to Payment</button>
 
-    <!-- Stripe/PayPal placeholder -->
-    <div id="paypal-container"></div>
-</div>
+   
 
 
 
@@ -139,6 +137,8 @@
     </script>
 
 var expressCheckoutElement = elements.create('expressCheckout');
+
+        const expressCheckoutElement = elements.getElement('expressCheckout');
     
     <!-- Footer Section -->
     <footer>
